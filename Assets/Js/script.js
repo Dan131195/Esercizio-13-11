@@ -37,5 +37,5 @@ function deleteItem(index) {
 }
 
 function done() {
-  list.style.textDecoration = "line-through";
+  list.value.style.textDecoration = "line-through";
 }
