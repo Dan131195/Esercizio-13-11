@@ -1,4 +1,4 @@
-const divList = document.getElementById("list");
+const frmList = document.getElementById("list");
 const text = document.getElementById("text");
 const btnText = document.getElementById("btnText");
 const taskList = document.getElementById("taskList");
@@ -8,7 +8,7 @@ btnText.addEventListener("click", function (e) {
   e.preventDefault();
   addArray();
   addList();
-  list.reset();
+  frmList.reset();
 });
 
 function addArray() {
@@ -25,7 +25,7 @@ function addList() {
     button.setAttribute("type", "button");
     button.setAttribute("id", "btnDelete");
     button.setAttribute("onclick", `deleteItem(${i})`);
-    button.innerHTML = '<i class="fa-light fa-trash-can"></i>';
+    button.innerHTML = '<i class="fa-regular fa-trash-can"></i>';
     newItem.appendChild(button);
     taskList.appendChild(newItem);
   }
