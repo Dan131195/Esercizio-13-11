@@ -44,6 +44,7 @@ h1{
     margin-left: 10px;
     width: 20%;
     height: 48px;
+    font-size: 18px;
 }
 ul {
     text-align: left;
@@ -69,4 +70,5 @@ li {
     color: white;
     border-radius: 5px;
     width: 40px;
+    margin-top: -3px;
 }
