@@ -1,4 +1,4 @@
-const frmList = document.getElementById("list");
+const frmlist = document.getElementById("list");
 const text = document.getElementById("text");
 const btnText = document.getElementById("btnText");
 const taskList = document.getElementById("taskList");
@@ -8,7 +8,7 @@ btnText.addEventListener("click", function (e) {
   e.preventDefault();
   addArray();
   addList();
-  frmList.reset();
+  frmlist.reset();
 });
 
 function addArray() {
@@ -19,13 +19,15 @@ function addList() {
   taskList.innerHTML = "";
   for (let i = 0; i < list.length; i++) {
     let newItem = document.createElement("li");
-    newItem.setAttribute("onclick", `done(${i})`);
     newItem.innerText = list[i];
+    newItem.addEventListener("click", function () {
+      newItem.classList.toggle("bar");
+    });
     let button = document.createElement("button");
     button.setAttribute("type", "button");
     button.setAttribute("id", "btnDelete");
     button.setAttribute("onclick", `deleteItem(${i})`);
-    button.innerHTML = '<i class="fa-regular fa-trash-can"></i>';
+    button.innerHTML = `<i class="fa-regular fa-trash-can"></i>`;
     newItem.appendChild(button);
     taskList.appendChild(newItem);
   }
@@ -35,8 +37,3 @@ function deleteItem(index) {
   list.splice(index, 1);
   addList();
 }
-
-function done() {
-  list[0].style.textDecoration = "line-through";
-}
-console.log(list);
